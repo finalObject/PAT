@@ -7,7 +7,6 @@ for index in range(int(poly1[0])):
     so = 2*index+1
     if maxSize<int(poly1[so]):
         maxSize = int(poly1[so])
-#print(maxSize)
 for index in range(int(poly2[0])):
     so = 2*index+1
     if maxSize<int(poly2[so]):
@@ -26,6 +25,7 @@ for index in range(len(result)):
         maxSize-=1
 print('%d' %(maxSize+1),end='')
 for index in range(len(result)):
-    if result[len(result)-index-1]==0:
+    loc = len(result)-index-1
+    if result[loc]==0:
         continue
-    print(' %d %.1f' %(len(result)-index-1,result[len(result)-index-1]),end='')
+    print(' %d %.1f' %(loc,result[loc]),end='')
