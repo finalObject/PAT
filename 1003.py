@@ -1,3 +1,4 @@
+
 #!/usr/local/bin/python3
 tmpList = str.split(input())
 
@@ -45,4 +46,13 @@ for n in cities:
     # 从起点路径开始走，遍历Con，走下去，
     # 特别判断，已经走过的路就不走了
     # 一条路走完返回是否抵达终点，抵达的话返回距离和救援队数量
+rou = []
+minDis = 99999
+maxTea = 0
+
+
+rou.append(start)
+tmpTeams = cities[start].teams
+flag = True
+while flag == True:
     
