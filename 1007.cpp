@@ -1,33 +1,31 @@
 #include <iostream>
 #include <cstdio>
 using namespace std;
+int arr[10001];
+
 int main(){
-  int arr[10001];
-  int num ,head,tail;
-  int maxSum = -1;
-  cin >> num;
+  int n, sum = -1, tmp, start, end;
+  scanf("%d", &n);  
+  for (int i = 0; i < n; i++)  
+	scanf("%d", &arr[i]);  
 
-  for (int i=0;i<num;i++){
-	cin >> arr[i];
-  }
-
-  for(int i=0;i<num;i++){
-	int tmp = 0;
-	for(int j=i;j<num;j++){
+  for(int i=0;i<n;i++){
+	tmp = 0;
+	for(int j=i;j<n;j++){
 
 	  tmp += arr[j];
-	  if (tmp > maxSum){
-		maxSum = tmp;
-		head = i;
-		tail = j;
+	  if (tmp > sum){
+		sum = tmp;
+		start =arr[i];
+		end = arr[j];
 	  }
 	}
   }
 
-  if (maxSum<0){	
-	printf("0 %d %d\n",arr[0],arr[num-1]);
+  if (sum<0){	
+	printf("0 %d %d\n",arr[0],arr[n-1]);
   }else{
-	printf("%d %d %d\n",maxSum,head,tail);
+	printf("%d %d %d\n",sum,start,end);
   }
 
   return 0;
